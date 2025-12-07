@@ -9,7 +9,6 @@ from dotenv import load_dotenv
 load_dotenv()
 token = os.getenv("TOKEN")
 
-# ВАЖНО: позже сюда вставишь ngrok URL
 WEBAPP_URL = "file:///Users/arturernandeslitvinov/PycharmProjects/ABN/Channels_market/web/index.html#"
 
 bot = TeleBot(token, parse_mode="HTML")
