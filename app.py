@@ -4,13 +4,15 @@ from fastapi.staticfiles import StaticFiles
 from telebot import TeleBot, types
 import uvicorn
 import threading
+from dotenv import load_dotenv
 
-BOT_TOKEN = "8506035979:AAE6H3ta1v8uObASeHbICd2TdU2Wd0SXC4g"
+load_dotenv()
+token = os.getenv("TOKEN")
 
 # ВАЖНО: позже сюда вставишь ngrok URL
 WEBAPP_URL = "file:///Users/arturernandeslitvinov/PycharmProjects/ABN/Channels_market/web/index.html#"
 
-bot = TeleBot(BOT_TOKEN, parse_mode="HTML")
+bot = TeleBot(token, parse_mode="HTML")
 app = FastAPI()
 
 # Раздаём папку web как статику
