@@ -1,0 +1,211 @@
+:root {
+    --bg: #1c1c1c;
+    --card: #313133;
+    --muted: #929294;
+    --accent: #4386fc;
+    --white: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: "Avenir Next", "SF Pro Display", "Segoe UI", sans-serif;
+    background: var(--bg);
+    color: var(--white);
+}
+
+.app {
+    min-height: 100vh;
+    background: var(--bg);
+    max-width: 480px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    padding: 20px 18px 112px;
+}
+
+.top-bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px 6px 18px;
+}
+
+.link-btn {
+    background: none;
+    border: none;
+    color: var(--accent);
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.brand {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2px;
+}
+
+.brand-title {
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.brand-subtitle {
+    color: var(--muted);
+    font-size: 13px;
+}
+
+.icon-btn {
+    width: 36px;
+    height: 36px;
+    border-radius: 12px;
+    border: 1px solid var(--accent);
+    background: none;
+    color: var(--accent);
+    display: grid;
+    place-items: center;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.dots {
+    transform: translateY(-2px);
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.search-bar {
+    position: relative;
+    display: block;
+}
+
+.search-bar input {
+    width: 100%;
+    border: none;
+    border-radius: 22px;
+    background: var(--card);
+    color: var(--muted);
+    padding: 15px 44px 15px 18px;
+    font-size: 16px;
+    outline: none;
+}
+
+.search-icon {
+    position: absolute;
+    right: 16px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 18px;
+    height: 18px;
+    fill: var(--muted);
+}
+
+.logo-card {
+    background: var(--card);
+    color: var(--white);
+    border-radius: 28px;
+    min-height: 170px;
+    display: grid;
+    place-items: center;
+    font-size: 24px;
+    letter-spacing: 0.5px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.tile {
+    background: var(--card);
+    border: none;
+    border-radius: 26px;
+    padding: 26px 12px 22px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 14px;
+    color: var(--muted);
+    font-size: 17px;
+    cursor: pointer;
+    transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.tile:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.25);
+}
+
+.tile-icon {
+    width: 52px;
+    height: 52px;
+    object-fit: contain;
+    filter: brightness(0) saturate(0) invert(71%) sepia(1%) saturate(0%) hue-rotate(173deg) brightness(90%) contrast(85%);
+}
+
+.create-btn {
+    width: 100%;
+    border: none;
+    border-radius: 22px;
+    background: var(--card);
+    color: var(--white);
+    padding: 20px;
+    font-size: 19px;
+    cursor: pointer;
+    transition: transform 120ms ease, box-shadow 120ms ease;
+}
+
+.create-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.2);
+}
+
+.bottom-nav {
+    position: fixed;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    height: 92px;
+    background: rgba(20, 20, 20, 0.94);
+    border-top: 1px solid #262626;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    align-items: center;
+    padding: 10px 16px 22px;
+    max-width: 480px;
+    width: 100%;
+    margin: 0 auto;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    color: var(--muted);
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.nav-item img {
+    width: 24px;
+    height: 24px;
+    filter: brightness(0) saturate(0) invert(71%) sepia(1%) saturate(0%) hue-rotate(173deg) brightness(90%) contrast(85%);
+}
+
+.nav-item.active {
+    color: var(--accent);
+}
+
+.nav-item.active img {
+    filter: brightness(0) saturate(100%) invert(44%) sepia(48%) saturate(2527%) hue-rotate(203deg) brightness(100%) contrast(101%);
+}
